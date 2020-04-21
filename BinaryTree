@@ -57,4 +57,152 @@ class Solution:
             self.helper(root.left,res)
             self.helper(root.right,res)
  -------------------------------------------           
+Inorder traversal - Iterative -          
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        
+        if not root:
+            return
+        stk = []
+        res = []
+        
+        curNode = root
+        
+        while curNode or stk:
           
+            while curNode:
+                stk.append(curNode)
+                curNode = curNode.left
+                
+            curNode = stk.pop()
+            res.append(curNode.val)
+            
+            curNode = curNode.right
+                
+        return res     
+----------------------
+Inorder traversal - Recursive - 
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        
+        if not root:
+            return
+        stk = []
+        self.helper(root, stk)
+        return stk
+    
+    def helper(self,root, stk):
+        
+        if root:
+            self.helper(root.left,stk)
+            stk.append(root.val)
+            self.helper(root.right,stk)
+ --------------------------------------
+ Post order traversal - Recursive-
+ 
+ # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        
+        res = []
+        self.helper(root, res)
+        return res
+        
+        
+    def helper(self, root: TreeNode, res):
+        
+        if root:
+            
+            self.helper(root.left, res)           
+            self.helper(root.right, res)
+            res.append(root.val)
+        
+  --------------------
+  Post order traversal - iterative -
+  
+  # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        
+        l1 = []
+        
+        if root == None:
+            return 
+        
+        self.postordHelper(root, l1)
+        
+        return l1
+     
+    def postordHelper(self,root, l1):
+        
+        if root != None:
+            if root.left != None:
+                self.postordHelper(root.left, l1)
+                
+            if root.right != None:
+                self.postordHelper(root.right, l1)
+            
+            l1.append(root.val)
+                
+ ---------------
+ Level order (BFS) traversal - iterative -
+ 
+ # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+from collections import deque
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        levels = []
+    
+        if not root:
+            return levels
+        
+        def helper(node, level):
+            
+            if len(levels) == level:
+                
+                levels.append([])
+                
+            levels[level].append(node.val)
+                
+            if node.left:
+                helper(node.left, level+1)
+            if node.right:
+                helper(node.right, level +1)
+    
+        helper(root, 0)
+        return levels
+ -----------------------------
+ Level order (BFS) - Recursive - 
+ 
