@@ -1,0 +1,66 @@
+#Bubble sort
+#b = [8,6,4,1,5,3,7] 
+#for k in range(len(b)-1):
+#    for i  in range( len(b)-2):
+#        if b[i] > b[i+1]:
+#            b[i],b[i+1] = b[i+1],b[i]       
+#print(b)
+#==============
+
+# Selection sort
+#s = [2,7,4,1,5,3]
+#iMin = 0
+#temp =0
+
+#for i in range(0,len(s)-2):
+#    iMin = i
+#    for j in range(i+1, len(s)-1):
+#        if s[j] < s[iMin]:
+#            iMin = j
+        
+#        s[i],s[iMin] = s[iMin],s[i]
+#print(s) 
+#==================
+#Insertion sort
+#I = [2,7,4,1,5,3]
+#for i in range(1, len(I)):
+#    value = I[i]
+#    hole = i
+#    while hole > 0 and I[hole-1] > value:
+#        I[hole] = I[hole-1]
+#        hole = hole -1
+#    I[hole] = value
+#print(I)    
+#============
+#s = "anagram"
+#print(sorted(s))
+#=================
+# counting sort
+
+nums = [3,3,2,4,2,5,0,6]
+
+counts = [0] * (7)
+
+for item in nums:
+        counts[item] += 1
+print(counts) 
+
+num_items_before = 0
+for i, count in enumerate(counts):
+    counts[i] = num_items_before
+    num_items_before += count
+print(counts[i])  
+
+sorted_list = [None] * len(nums)
+for item in nums:
+        sorted_list[ counts[item] ] = item
+        counts[item] += 1
+print(sorted_list )       
+        
+    
+    
+
+
+
+
+
