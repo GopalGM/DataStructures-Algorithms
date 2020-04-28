@@ -23,14 +23,15 @@
 #==================
 #Insertion sort
 #I = [2,7,4,1,5,3]
-#for i in range(1, len(I)):
-#    value = I[i]
-#    hole = i
-#    while hole > 0 and I[hole-1] > value:
-#        I[hole] = I[hole-1]
-#        hole = hole -1
-#    I[hole] = value
-#print(I)    
+for j in range(1, len(I)):
+        key = I[j]
+            i = j-1
+            while i >-1 and I[i] > key:
+                I[i+1] = I[i]
+               # print(i)
+                i = i-1
+            I[i+1] = key  
+        print(I)     
 #============
 #s = "anagram"
 #print(sorted(s))
