@@ -1,25 +1,25 @@
 #Bubble sort
-#b = [8,6,4,1,5,3,7] 
-#for k in range(len(b)-1):
-#    for i  in range( len(b)-2):
-#        if b[i] > b[i+1]:
-#            b[i],b[i+1] = b[i+1],b[i]       
-#print(b)
+b = [8,6,4,1,5,3,7] 
+for k in range(len(b)-1):
+    for i  in range( len(b)-2):
+        if b[i] > b[i+1]:
+            b[i],b[i+1] = b[i+1],b[i]       
+print(b)
 #==============
 
 # Selection sort
-#s = [2,7,4,1,5,3]
-#iMin = 0
-#temp =0
+s = [2,7,4,1,5,3]
+iMin = 0
+temp =0
 
-#for i in range(0,len(s)-2):
-#    iMin = i
-#    for j in range(i+1, len(s)-1):
-#        if s[j] < s[iMin]:
-#            iMin = j
+for i in range(0,len(s)-2):
+    iMin = i
+    for j in range(i+1, len(s)-1):
+        if s[j] < s[iMin]:
+           iMin = j
         
-#        s[i],s[iMin] = s[iMin],s[i]
-#print(s) 
+        s[i],s[iMin] = s[iMin],s[i]
+print(s) 
 #==================
 #Insertion sort
 #I = [2,7,4,1,5,3]
@@ -92,9 +92,9 @@ if len(nums) > 1:
                 nums[k] = R[j]
                 j += 1
                 k += 1
-            return nums
+            pritn (nums)
         else :
-            return nums
+            print(nums)
         
     
     
