@@ -58,7 +58,7 @@ for item in nums:
         counts[item] += 1
 print(sorted_list )       
 ---------------------
-Merge Sort -
+#Merge Sort -
 
 nums = [5,2,3,1]
 
