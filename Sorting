@@ -57,7 +57,7 @@ for item in nums:
         sorted_list[ counts[item] ] = item
         counts[item] += 1
 print(sorted_list )       
----------------------
+#---------------------
 #Merge Sort -
 
 nums = [5,2,3,1]
@@ -95,6 +95,16 @@ if len(nums) > 1:
             pritn (nums)
         else :
             print(nums)
+#=====================
+# Wiggle Sort - an unsorted array nums, reorder it in-place such that nums[0] <= nums[1] >= nums[2] <= nums[3]....
+nums =  [3,5,2,1,6,4]
+
+nums.sort()
+        
+        for i in range(1,len(nums)-1, 2):
+            nums[i], nums[i+1] = nums[i+1], nums[i]
+  
+#==============================  
         
     
     
