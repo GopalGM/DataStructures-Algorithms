@@ -104,7 +104,43 @@ nums.sort()
         for i in range(1,len(nums)-1, 2):
             nums[i], nums[i+1] = nums[i+1], nums[i]
   
-#==============================  
+#============================== 
+# Quick Sort
+nums  = [5,2,3,1]
+
+def sortArray(self, nums: List[int]) -> List[int]:
+       
+        start = 0
+        end = len(nums) - 1
+        
+        self.Qsort(nums, start, end)
+        return nums
+        #print(nums)
+        #for i in range(len(nums) ):
+            #print(nums[i])
+    
+    def Qsort(self, nums, start, end):
+        
+        if start < end:
+            pindex = self.getPivot(nums, start, end)
+        
+            self.Qsort(nums, start, pindex-1)
+            self.Qsort(nums, pindex+1, end)
+        
+    def getPivot(self,nums, start, end):
+        
+        pivot = nums[end]
+        pindex = start
+        
+        for i in range(start,end):
+            if nums[i] < pivot:
+                nums[i], nums[pindex] = nums[pindex], nums[i]
+                
+                pindex += 1
+        nums[pindex], nums[end] = nums[end], nums[pindex]
+        
+        return pindex
+    
         
     
     
