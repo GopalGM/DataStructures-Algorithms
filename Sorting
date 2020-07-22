@@ -1,9 +1,11 @@
 #Bubble sort
 b = [8,6,4,1,5,3,7] 
-for k in range(len(b)-1):
-    for i  in range( len(b)-2):
+size = len(b)-1
+for k in range(size):
+    for i  in range(size):
         if b[i] > b[i+1]:
-            b[i],b[i+1] = b[i+1],b[i]       
+            b[i],b[i+1] = b[i+1],b[i]   
+    size -= 1         
 print(b)
 #==============
 
