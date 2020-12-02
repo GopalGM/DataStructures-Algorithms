@@ -12,7 +12,7 @@ class Solution:
         Output: 6
         Explanation: [4,-1,2,1] has the largest sum = 6.
         
-        Time complexity : O(n)
+        Time complexity : O(N)
         Space complexity : O(1)
         '''
         
