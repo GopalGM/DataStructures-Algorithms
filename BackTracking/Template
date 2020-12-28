@@ -1,1 +1,4 @@
 
+BackTracking is an algorithm to solve constraint satisfaction problems(CSP) where it tries to find a solution and if come across any blocking it backtracks 
+and try to explore other available ways to reach to a solution.
+Classic examples of backtracking are - N-Queen problem,robot room cleaner, sudoku et al.
