@@ -2,6 +2,7 @@ class Solution:
     def fib(self, N: int) -> int:
         '''
         Top down with Memoization
+        This is also considered as Preorder traversal
         '''
         top_down = {0 : 0 , 1 : 1}
         
