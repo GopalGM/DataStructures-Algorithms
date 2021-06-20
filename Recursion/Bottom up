@@ -2,6 +2,7 @@ class Solution:
     def fib(self, N: int) -> int:
         '''
         Bottom up with memoization
+        This is also considered as Postorder traversal
         '''
         bottom_up = {0 : 0 , 1 : 1}
         if N <=1:
