@@ -1,0 +1,62 @@
+# ===============Create Adjacency Matrix for Unweighted Directed Graph ============
+listOfNodes = []
+rows = 5
+columns = 5
+adjacencyMatrix = [[0 for i in range(columns)] for j in range(rows)]
+
+def addNodes(node):
+    listOfNodes.append(node)
+
+def addEdges(node1, node2):
+    if node1 in listOfNodes and node2 in listOfNodes:
+        adjacencyMatrix[node1][node2] = 1
+    
+addNodes(0)
+addNodes(1)
+addNodes(2)
+addNodes(3)
+addNodes(4)
+
+addEdges(0,1)
+addEdges(0,2)
+addEdges(1,2)
+addEdges(2,3)
+addEdges(0,4)
+addEdges(3,4)
+
+print(listOfNodes) ==> [0, 1, 2, 3, 4]
+print(adjacencyMatrix) ==> [[0, 1, 1, 0, 1], [0, 0, 1, 0, 0], [0, 0, 0, 1, 0], [0, 0, 0, 0, 1], [0, 0, 0, 0, 0]]
+
+# ===============Create Adjacency Matrix for Weighted Directed Graph ============
+listOfNodes = []
+rows = 5
+columns = 5
+adjacencyMatrix = [[0 for i in range(columns)] for j in range(rows)]
+
+def addNodes(node):
+    listOfNodes.append(node)
+
+def addEdges(node1, node2, weight):
+    if node1 in listOfNodes and node2 in listOfNodes:
+        adjacencyMatrix[node1][node2] = weight
+    
+addNodes(0)
+addNodes(1)
+addNodes(2)
+addNodes(3)
+addNodes(4)
+
+addEdges(0,1,2)
+addEdges(0,2,8)
+addEdges(1,2,3)
+addEdges(2,3,5)
+addEdges(0,4,6)
+addEdges(3,4,7)
+
+print(listOfNodes) ==> [0, 1, 2, 3, 4]
+print(adjacencyMatrix) ==> [[0, 2, 8, 0, 6], [0, 0, 3, 0, 0], [0, 0, 0, 5, 0], [0, 0, 0, 0, 7], [0, 0, 0, 0, 0]]
+
+
+
+
+
