@@ -1,4 +1,4 @@
-# ============ Create Adjacency List ========
+# ============ Create Adjacency List for Unweighted Directed Graph========
 listOfNodes = []
 adjacencyList = collections.defaultdict(list)
 
@@ -26,3 +26,34 @@ addEdges(3,4)
 
 print(listOfNodes) ==> [0, 1, 2, 3, 4]
 print(adjacencyList) ==> {0: [1, 2, 4], 1: [2], 2: [3], 3: [4]}
+
+#============ Create Adjacency List for Weighted Directed Graph========
+
+listOfNodes = []
+adjacencyList = collections.defaultdict(list)
+
+def addNodes(node):
+    listOfNodes.append(node)
+
+def addEdges(node1, node2, weight):
+    
+    if node1 in listOfNodes and node2 in listOfNodes:
+        adjacencyList[node1].append((node2, weight))
+    
+
+addNodes(0)
+addNodes(1)
+addNodes(2)
+addNodes(3)
+addNodes(4)
+
+addEdges(0,1,2)
+addEdges(0,2,8)
+addEdges(1,2,3)
+addEdges(2,3,5)
+addEdges(0,4,6)
+addEdges(3,4,7)
+
+print(listOfNodes) ==> [0, 1, 2, 3, 4]
+print(adjacencyList) ==> {0: [(1, 2), (2, 8), (4, 6)], 1: [(2, 3)], 2: [(3, 5)], 3: [(4, 7)]}
+
